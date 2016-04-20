@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<DoctorLog>
+  <App id="123">
+    Hi Doc! I am Ami G. Dala. Your friendly patient and guide. Since you are new to the app, I would like to show you around. Type 'go' whenever you have 5 minutes for me. You can leave this chat at anytime and then return to it to resume our conversation.
+  </App>
+  <App id="234">
+  Hi Doc! I am Ami G. Dala. Your friendly patient and guide. Since you are new to the app, I would like to show you around. Type 'go' whenever you have 5 minutes for me. You can leave this chat at anytime and then return to it to resume our conversation.
+</App>
+  <App id="345">
+    Hi Doc! I am Ami G. Dala. Your friendly patient and guide. Since you are new to the app, I would like to show you around. Type 'go' whenever you have 5 minutes for me. You can leave this chat at anytime and then return to it to resume our conversation.
+  </App>
+  <App id="456">Sorry could not understand your message</App>
+  <App id="111">Congrats, you made it to the end! One last tip: If you’re ever stuck you can go to “Need Help?” in the main menu, and tap “Chat with us”, to talk to a human. You can exit this chat now. Remember, if you come back, I’ll take you through this tutorial again! (Until I evolve into something more awesome!)</App>
+  <App id="112">Congrats, you made it to the end! One last tip: If you’re ever stuck you can go to “Need Help?” in the main menu, and tap “Chat with us”, to talk to a human. You can exit this chat now. Remember, if you come back, I’ll take you through this tutorial again! (Until I evolve into something more awesome!)</App>
+  <App id="113">Sorry, my cerebral cortex isn’t evolved enough to understand that!Type ‘Go’ when you want to continue.</App>
+  <App id="1">Hi Doc! I am Ami G. Dala. Your friendly patient and guide. Since you are new to the app, I would like to show you around. Type 'go' whenever you have 5 minutes for me. You can leave this chat at anytime and then return to it to resume our conversation.</App>
+</DoctorLog>

@@ -4,18 +4,19 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
-
+using System.Web.Http.Cors;
 using System.IO;
 using System.Reflection;
 using MeraDoctorBot_API.Models;
 
 namespace MeraDoctorBot_API.Controllers
 {
+    [EnableCors(origins: "*", headers: "*", methods: "*")]
     public class BotController : ApiController
     {
 
-        MessageTracker objMsgTrcker = new MessageTracker();
-        MessageResponse objResponse = new MessageResponse();
+        //MessageTracker objMsgTrcker = new MessageTracker();
+        //MessageResponse objResponse = new MessageResponse();
         [Route("api/Bot/v1.0/{appId}")]
         // GET: api/Bot/5
         public string Get(string appId)
@@ -38,10 +39,14 @@ namespace MeraDoctorBot_API.Controllers
             try
             {
                 if (string.IsNullOrEmpty(appId)) { return "Sorry Bot cannot identify user."; }
-                return objMsgTrcker.GetLastMessage(appId);
+                string response = MessageResponse.Response("", "").Trim();
+                MessageTracker.WriteLastMessaage(appId, response);
+                return response;
+                
             }
-            catch { return "Something went wrong while communicating with Bot!"; }
+            catch (Exception ex) { return ex.Message; }  //return "Something went wrong while communicating with Bot!"; }
         }
+
         [Route("api/Bot/v1.0/{appId}/{userInput}")]
         // GET: api/Bot/5/userInput
         public string Get(string appId, string userInput)
@@ -50,12 +55,12 @@ namespace MeraDoctorBot_API.Controllers
             {
                 if (string.IsNullOrEmpty(appId)) { return "Sorry Bot cannot identify user."; }
                 if (string.IsNullOrEmpty(userInput)) { return "Please input some text for Bot to read."; }
-                string LastMsg = objMsgTrcker.GetLastMessage(appId);
-                string response = objResponse.Response(LastMsg, userInput).Trim();
-                objMsgTrcker.WriteLastMessaage(appId, response);
+                string LastMsg = MessageTracker.GetLastMessage(appId);
+                string response = MessageResponse.Response(LastMsg, userInput).Trim();
+                MessageTracker.WriteLastMessaage(appId, response);
                 return response;
             }
-            catch(Exception ex) { return "Something went wrong while communicating with Bot!"; }
+            catch (Exception ex) { return ex.Message; } //return "Something went wrong while communicating with Bot!"; }
         }
 
         //// POST: api/Bot
